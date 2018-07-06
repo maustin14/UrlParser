@@ -25,31 +25,32 @@ class UrlParser
        domain_arr = @url.split("//").last.split(":").first
        return domain_arr
     end
-        
-    def path 
-        if @path == "" 
-            @path = nil
-        end 
-        @path
-    end
-
-    def port 
-        if (@port == "" || @port == nil) && scheme == "https"
-            @port = 443.to_s
-        elsif (@port == "" || @port == nil) && scheme == "http"
-            @port = 80.to_s
-        end 
-        @port
-    end
-
-    def query_string
-        query_string = @url.split('/')[3].split('?')[1].split('#')[0].split('&')
-        query_string.each do |item|
-            param = item.split('=')
-            @querystring[param[0]] = param[1]
-        end 
-        
-        @querystring
-    end
 end
+        
+#     def path 
+#         if @path == "" 
+#             @path = nil
+#         end 
+#         @path
+#     end
+
+#     def port 
+#         if (@port == "" || @port == nil) && scheme == "https"
+#             @port = 443.to_s
+#         elsif (@port == "" || @port == nil) && scheme == "http"
+#             @port = 80.to_s
+#         end 
+#         @port
+#     end
+
+#     def query_string
+#         query_string = @url.split('/')[3].split('?')[1].split('#')[0].split('&')
+#         query_string.each do |item|
+#             param = item.split('=')
+#             @querystring[param[0]] = param[1]
+#         end 
+        
+#         @querystring
+#     end
+# end
   
